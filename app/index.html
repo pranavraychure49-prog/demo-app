@@ -3,217 +3,215 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pranav | Portfolio</title>
+<title>Pranav | Developer Portfolio</title>
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Segoe UI', sans-serif;
-    }
+:root {
+    --bg: #0a0f1c;
+    --card: #111827;
+    --accent: #00f7ff;
+    --text: #ffffff;
+    --sub: #9ca3af;
+}
 
-    body {
-        background: #0a0f1c;
-        color: white;
-        scroll-behavior: smooth;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-    header {
-        position: fixed;
-        width: 100%;
-        background: rgba(0,0,0,0.6);
-        backdrop-filter: blur(10px);
-        padding: 15px 60px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 1000;
-    }
+body {
+    background: var(--bg);
+    color: var(--text);
+}
 
-    header h1 {
-        color: #00d4ff;
-    }
+/* NAVBAR */
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
 
-    nav a {
-        margin-left: 25px;
-        text-decoration: none;
-        color: white;
-        transition: 0.3s;
-    }
+nav h1 {
+    color: var(--accent);
+}
 
-    nav a:hover {
-        color: #00d4ff;
-    }
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: white;
+}
 
-    section {
-        padding: 100px 60px;
-        min-height: 100vh;
-    }
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 60px;
+}
 
-    /* HERO */
-    .hero {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+.hero h1 {
+    font-size: 60px;
+}
 
-    .hero h2 {
-        font-size: 50px;
-    }
+.hero span {
+    color: var(--accent);
+}
 
-    .hero span {
-        color: #00d4ff;
-    }
+.hero p {
+    margin-top: 15px;
+    color: var(--sub);
+}
 
-    .hero p {
-        margin-top: 10px;
-        font-size: 18px;
-        color: #aaa;
-    }
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: var(--accent);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
-    .btn {
-        margin-top: 25px;
-        padding: 12px 25px;
-        border: none;
-        background: #00d4ff;
-        color: black;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+/* SECTIONS */
+section {
+    padding: 100px 60px;
+}
 
-    .btn:hover {
-        transform: scale(1.1);
-    }
+.card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
 
-    /* SECTIONS */
-    .box {
-        background: #111827;
-        padding: 30px;
-        border-radius: 12px;
-        margin-top: 20px;
-        transition: 0.3s;
-    }
+/* PROJECT GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 20px;
+}
 
-    .box:hover {
-        transform: translateY(-5px);
-    }
+.project {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
 
-    /* PROJECTS */
-    .projects-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
+.project:hover {
+    transform: translateY(-10px);
+    background: var(--accent);
+    color: black;
+}
 
-    .card {
-        background: #1f2937;
-        padding: 20px;
-        border-radius: 10px;
-        transition: 0.3s;
-    }
+/* SKILLS */
+.skills span {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 15px;
+    background: var(--accent);
+    color: black;
+    border-radius: 5px;
+}
 
-    .card:hover {
-        transform: scale(1.05);
-        background: #00d4ff;
-        color: black;
-    }
+/* CONTACT */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+}
 
-    /* SKILLS */
-    .skills span {
-        display: inline-block;
-        margin: 10px;
-        padding: 10px 15px;
-        background: #00d4ff;
-        color: black;
-        border-radius: 5px;
-        font-weight: bold;
-    }
+footer {
+    text-align: center;
+    padding: 20px;
+}
 
-    /* CONTACT */
-    input, textarea {
-        width: 100%;
-        padding: 12px;
-        margin: 10px 0;
-        border-radius: 6px;
-        border: none;
-    }
+/* ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.6s;
+}
 
-    footer {
-        text-align: center;
-        padding: 20px;
-        background: #020617;
-    }
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 </style>
 </head>
 
 <body>
 
-<header>
+<nav>
     <h1>Pranav</h1>
-    <nav>
-        <a href="#home">Home</a>
+    <div>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
-    </nav>
-</header>
+    </div>
+</nav>
 
 <!-- HERO -->
-<section id="home" class="hero">
-    <h2>Hi, I'm <span>Pranav</span></h2>
-    <p>Full Stack Developer | AI Enthusiast | AWS Learner</p>
-    <button class="btn" onclick="scrollToSection('projects')">View My Work</button>
-</section>
+<div class="hero">
+    <h1>Hi, I'm <span>Pranav</span></h1>
+    <p>Full Stack Developer | AI | AWS</p>
+    <button class="btn" onclick="scrollToSection('projects')">View Work</button>
+</div>
 
 <!-- ABOUT -->
-<section id="about">
-    <div class="box">
-        <h2>About Me</h2>
+<section id="about" class="fade">
+    <h2>About Me</h2>
+    <div class="card">
         <p>
-            I am a passionate developer working on real-world applications including
-            AI systems, cloud-based projects, and full-stack web apps.
-            I enjoy solving problems and building scalable systems.
+            I am a passionate developer building AI systems, cloud-based solutions, 
+            and full-stack applications. I focus on real-world problem solving 
+            using modern technologies.
         </p>
     </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects">
+<section id="projects" class="fade">
     <h2>Projects</h2>
 
-    <div class="projects-container">
+    <div class="grid">
 
-        <div class="card">
+        <div class="project">
             <h3>Garage Management System</h3>
-            <p>Flask + MySQL system for managing services and customers.</p>
+            <p>Flask + MySQL system for managing customers & services</p>
         </div>
 
-        <div class="card">
+        <div class="project">
             <h3>AI Voice Assistant</h3>
-            <p>Speech-based assistant using Python automation libraries.</p>
+            <p>Python assistant with speech recognition</p>
         </div>
 
-        <div class="card">
+        <div class="project">
             <h3>Vehicle Health Diagnostics</h3>
-            <p>AWS-based ML system for predictive vehicle maintenance.</p>
+            <p>AWS ML system for predictive maintenance</p>
         </div>
 
-        <div class="card">
+        <div class="project">
             <h3>Travel Agency Website</h3>
-            <p>Full-stack booking platform using PHP and MySQL.</p>
+            <p>Booking system using PHP & MySQL</p>
         </div>
 
     </div>
 </section>
 
 <!-- SKILLS -->
-<section id="skills">
+<section id="skills" class="fade">
     <h2>Skills</h2>
-
     <div class="skills">
         <span>HTML</span>
         <span>CSS</span>
@@ -222,55 +220,43 @@
         <span>Flask</span>
         <span>AWS</span>
         <span>SQL</span>
-        <span>React (Learning)</span>
     </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-    <div class="box">
-        <h2>Contact Me</h2>
-
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
-        <textarea placeholder="Your Message"></textarea>
-
-        <button class="btn" onclick="sendMessage()">Send Message</button>
+<section id="contact" class="fade">
+    <h2>Contact Me</h2>
+    <div class="card">
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Message"></textarea>
+        <button class="btn" onclick="sendMessage()">Send</button>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Pranav | Built with ❤️</p>
+    <p>© 2026 Pranav</p>
 </footer>
 
 <script>
 function scrollToSection(id) {
-    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
 
 function sendMessage() {
-    alert("Message sent (Demo only)");
+    alert("Message sent (Demo)");
 }
 
-/* Fade animation */
-const sections = document.querySelectorAll("section");
+/* SCROLL ANIMATION */
+const elements = document.querySelectorAll(".fade");
 
 window.addEventListener("scroll", () => {
-    sections.forEach(sec => {
-        const top = window.scrollY;
-        const offset = sec.offsetTop - 250;
-
-        if (top > offset) {
-            sec.style.opacity = 1;
-            sec.style.transform = "translateY(0)";
+    elements.forEach(el => {
+        const pos = el.getBoundingClientRect().top;
+        if (pos < window.innerHeight - 100) {
+            el.classList.add("show");
         }
     });
-});
-
-sections.forEach(sec => {
-    sec.style.opacity = 0;
-    sec.style.transform = "translateY(50px)";
-    sec.style.transition = "0.6s";
 });
 </script>
 
