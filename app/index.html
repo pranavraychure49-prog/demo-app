@@ -1,118 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranav Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pranav | Portfolio</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
 
-        body {
-            background: #0f172a;
-            color: white;
-            scroll-behavior: smooth;
-        }
+    body {
+        background: #0a0f1c;
+        color: white;
+        scroll-behavior: smooth;
+    }
 
-        header {
-            position: fixed;
-            width: 100%;
-            background: #020617;
-            padding: 15px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
+    header {
+        position: fixed;
+        width: 100%;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(10px);
+        padding: 15px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+    }
 
-        header h1 {
-            color: #38bdf8;
-        }
+    header h1 {
+        color: #00d4ff;
+    }
 
-        nav a {
-            margin: 0 15px;
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+    nav a {
+        margin-left: 25px;
+        text-decoration: none;
+        color: white;
+        transition: 0.3s;
+    }
 
-        nav a:hover {
-            color: #38bdf8;
-        }
+    nav a:hover {
+        color: #00d4ff;
+    }
 
-        section {
-            padding: 100px 50px;
-            min-height: 100vh;
-        }
+    section {
+        padding: 100px 60px;
+        min-height: 100vh;
+    }
 
-        .hero {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+    /* HERO */
+    .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-        .hero h2 {
-            font-size: 40px;
-        }
+    .hero h2 {
+        font-size: 50px;
+    }
 
-        .hero span {
-            color: #38bdf8;
-        }
+    .hero span {
+        color: #00d4ff;
+    }
 
-        .btn {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: #38bdf8;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+    .hero p {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #aaa;
+    }
 
-        .about, .projects, .skills, .contact {
-            background: #020617;
-            margin-top: 20px;
-            border-radius: 10px;
-        }
+    .btn {
+        margin-top: 25px;
+        padding: 12px 25px;
+        border: none;
+        background: #00d4ff;
+        color: black;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
 
-        .projects .card {
-            background: #0f172a;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
+    .btn:hover {
+        transform: scale(1.1);
+    }
 
-        .projects .card:hover {
-            transform: scale(1.05);
-        }
+    /* SECTIONS */
+    .box {
+        background: #111827;
+        padding: 30px;
+        border-radius: 12px;
+        margin-top: 20px;
+        transition: 0.3s;
+    }
 
-        .skills span {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px;
-            background: #38bdf8;
-            border-radius: 5px;
-        }
+    .box:hover {
+        transform: translateY(-5px);
+    }
 
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-        }
+    /* PROJECTS */
+    .projects-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #020617;
-        }
-    </style>
+    .card {
+        background: #1f2937;
+        padding: 20px;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        background: #00d4ff;
+        color: black;
+    }
+
+    /* SKILLS */
+    .skills span {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 15px;
+        background: #00d4ff;
+        color: black;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    /* CONTACT */
+    input, textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 6px;
+        border: none;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #020617;
+    }
+
+</style>
 </head>
 
 <body>
@@ -128,96 +162,116 @@
     </nav>
 </header>
 
+<!-- HERO -->
 <section id="home" class="hero">
-    <h2>Hello, I'm <span>Pranav</span></h2>
-    <p>Full Stack Developer | AI Enthusiast | Cloud Learner</p>
-    <button class="btn" onclick="scrollToSection('projects')">View Projects</button>
+    <h2>Hi, I'm <span>Pranav</span></h2>
+    <p>Full Stack Developer | AI Enthusiast | AWS Learner</p>
+    <button class="btn" onclick="scrollToSection('projects')">View My Work</button>
 </section>
 
-<section id="about" class="about">
-    <h2>About Me</h2>
-    <p>
-        I am a passionate developer working on projects like Garage Management System, AI Voice Assistant,
-        and AWS-based solutions. I love building real-world applications and exploring AI & Cloud technologies.
-    </p>
+<!-- ABOUT -->
+<section id="about">
+    <div class="box">
+        <h2>About Me</h2>
+        <p>
+            I am a passionate developer working on real-world applications including
+            AI systems, cloud-based projects, and full-stack web apps.
+            I enjoy solving problems and building scalable systems.
+        </p>
+    </div>
 </section>
 
-<section id="projects" class="projects">
+<!-- PROJECTS -->
+<section id="projects">
     <h2>Projects</h2>
 
-    <div class="card">
-        <h3>Garage Management System</h3>
-        <p>Flask + MySQL based system to manage customers, services, and billing.</p>
-    </div>
+    <div class="projects-container">
 
-    <div class="card">
-        <h3>AI Voice Assistant</h3>
-        <p>Python-based assistant using speech recognition and automation tools.</p>
-    </div>
+        <div class="card">
+            <h3>Garage Management System</h3>
+            <p>Flask + MySQL system for managing services and customers.</p>
+        </div>
 
-    <div class="card">
-        <h3>Vehicle Health Diagnostics</h3>
-        <p>AI/ML project using AWS for predictive vehicle maintenance.</p>
-    </div>
+        <div class="card">
+            <h3>AI Voice Assistant</h3>
+            <p>Speech-based assistant using Python automation libraries.</p>
+        </div>
 
+        <div class="card">
+            <h3>Vehicle Health Diagnostics</h3>
+            <p>AWS-based ML system for predictive vehicle maintenance.</p>
+        </div>
+
+        <div class="card">
+            <h3>Travel Agency Website</h3>
+            <p>Full-stack booking platform using PHP and MySQL.</p>
+        </div>
+
+    </div>
 </section>
 
-<section id="skills" class="skills">
+<!-- SKILLS -->
+<section id="skills">
     <h2>Skills</h2>
 
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>JavaScript</span>
-    <span>Python</span>
-    <span>Flask</span>
-    <span>AWS</span>
-    <span>SQL</span>
-
+    <div class="skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Python</span>
+        <span>Flask</span>
+        <span>AWS</span>
+        <span>SQL</span>
+        <span>React (Learning)</span>
+    </div>
 </section>
 
-<section id="contact" class="contact">
-    <h2>Contact Me</h2>
+<!-- CONTACT -->
+<section id="contact">
+    <div class="box">
+        <h2>Contact Me</h2>
 
-    <input type="text" placeholder="Your Name">
-    <input type="email" placeholder="Your Email">
-    <textarea placeholder="Your Message"></textarea>
-    <button class="btn" onclick="sendMessage()">Send</button>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Your Message"></textarea>
 
+        <button class="btn" onclick="sendMessage()">Send Message</button>
+    </div>
 </section>
 
 <footer>
-    <p>© 2026 Pranav | Portfolio</p>
+    <p>© 2026 Pranav | Built with ❤️</p>
 </footer>
 
 <script>
-    function scrollToSection(id) {
-        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-    }
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+}
 
-    function sendMessage() {
-        alert("Message sent successfully! (Demo only)");
-    }
+function sendMessage() {
+    alert("Message sent (Demo only)");
+}
 
-    // Simple fade-in animation
-    const sections = document.querySelectorAll("section");
+/* Fade animation */
+const sections = document.querySelectorAll("section");
 
-    window.addEventListener("scroll", () => {
-        sections.forEach(sec => {
-            const top = window.scrollY;
-            const offset = sec.offsetTop - 200;
-
-            if (top > offset) {
-                sec.style.opacity = 1;
-                sec.style.transform = "translateY(0)";
-            }
-        });
-    });
-
+window.addEventListener("scroll", () => {
     sections.forEach(sec => {
-        sec.style.opacity = 0;
-        sec.style.transform = "translateY(50px)";
-        sec.style.transition = "0.6s";
+        const top = window.scrollY;
+        const offset = sec.offsetTop - 250;
+
+        if (top > offset) {
+            sec.style.opacity = 1;
+            sec.style.transform = "translateY(0)";
+        }
     });
+});
+
+sections.forEach(sec => {
+    sec.style.opacity = 0;
+    sec.style.transform = "translateY(50px)";
+    sec.style.transition = "0.6s";
+});
 </script>
 
 </body>
