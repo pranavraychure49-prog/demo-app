@@ -84,8 +84,7 @@ jobs:
             rm -rf demo-app
 
             echo "Cloning repo..."
-            GIT_ASKPASS=true git clone https://github.com/rajatdevops1/demo-app.git
-
+            GIT_ASKPASS=true git clone https://github.com/pranavraychure49-prog/demo-app.git
             cd demo-app
 
             echo "Stopping old container..."
